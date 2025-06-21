@@ -1,0 +1,21 @@
+class Solution {
+    public int missingNumber(int[] nums) {
+        int [] dp=new int[nums.length+1];
+        int count=-1;
+        for(int i=0;i<nums.length;i++)
+        {
+            dp[nums[i]]=1;
+        }
+        for(int i=0;i<dp.length;i++)
+        {
+            if(dp[i]==0)
+            {
+                count=i;
+                break;
+            }
+        }
+        return count;
+    }
+}
+//Time Complexity:O(n)
+//Space Complexity:o(n)
